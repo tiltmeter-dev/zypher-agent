@@ -138,7 +138,10 @@ export class AnthropicModelProvider implements ModelProvider {
         ],
         messages: anthropicMessages,
         tools: anthropicTools,
-        thinking: this.#thinkingConfig,
+        // claude-sonnet-5-5 rejects both budget_tokens and disabled thinking
+        ...(!this.#model.startsWith("claude-sonnet-5-5") && {
+          thinking: this.#thinkingConfig,
+        }),
         metadata: {
           user_id: params.userId,
         },
