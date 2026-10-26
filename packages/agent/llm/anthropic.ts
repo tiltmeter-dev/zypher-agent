@@ -32,7 +32,7 @@ function isSupportedImageType(
 
 export interface AnthropicModelProviderOptions extends ModelProviderOptions {
   /**
-   * The model to use (e.g., "claude-sonnet-4-20250514").
+   * The model to use (e.g., "claude-sonnet-5-5").
    */
   model: string;
   enablePromptCaching?: boolean;
